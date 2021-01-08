@@ -361,7 +361,7 @@ reset_handler({_,KL},O,C,Q) ->
                     end,
                     ets:delete(?ETS_KEYS_STORE_TABLE_NAME,K),
                     if
-                        OC == O ->
+                        OC == NO ->
                             [compute_oldest_key((OC-1) div ?SERIE_SIZE,(C-1) div ?SERIE_SIZE),NQ-1];
                         true ->
                             [NO,NQ-1]
@@ -387,7 +387,7 @@ reset_handler(T,O,C,Q) ->
                                     end,
                                     ets:delete(?ETS_KEYS_STORE_TABLE_NAME,K),
                                     if
-                                        OC == O ->
+                                        OC == NO ->
                                             [compute_oldest_key((OC-1) div ?SERIE_SIZE,(C-1) div ?SERIE_SIZE),NQ-1];
                                         true ->
                                             [NO,NQ-1]
