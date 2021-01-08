@@ -130,7 +130,7 @@ common(info,{tcp,S,<<"CLEAN:SYNC",E/binary>>},[S,T]) when E =:= <<>> orelse E =:
             BK = pack_list_to_binary(KL,<<>>),
             BD = <<"{",BC/binary,":",BK/binary,"}">>,
             BR = list_to_binary(ref_to_list(R)),
-            T:send(S,<<"{","[",BD/binary,"]",":",BR/binary,"}">>),
+            T:send(S,<<"{",BD/binary,":",BR/binary,"}">>),
             {next_state,delete,[S,T,#{ref => BR, key => {C,KL}}],[{state_timeout,?TIMEOUT_STATE_DELETE,BR}]};
         _ ->
             T:send(S,<<"{","ERROR",":","UNKNOW_ERROR","}">>),

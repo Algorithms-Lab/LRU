@@ -224,7 +224,7 @@ max key size
 
 ###### external:
 
-    CLEAN:SYNC                %% JSON: "{[{counter:[key]}]:UNIQ_REF}"
+    CLEAN:SYNC                %% JSON: "{{counter:[key]}:UNIQ_REF}"
     CLEAN:UNIQ_REF            %% "OK"
 
 #### put list keys with conters

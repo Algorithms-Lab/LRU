@@ -13,7 +13,7 @@
 -define(MAX_KEY_SIZE,fun() -> application:get_env(lru,max_key_size,72) end).
 
 %%
-%% following settings in progress develop
+%% this is setting in progress develop
 %%
 -define(SPAWN_OPT_LRU,[
 %   {max_heap_size,0},
